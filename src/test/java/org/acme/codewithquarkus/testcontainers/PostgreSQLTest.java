@@ -20,7 +20,7 @@ public class PostgreSQLTest {
 
     @Container
     private static final PostgreSQLContainer<?> postgresContainer =
-            new PostgreSQLContainer<>(PostgreSQLContainer.IMAGE)
+            new PostgreSQLContainer<>("quay.io/sclorg/postgresql-15-c8s")
                     .withDatabaseName("testdb")
                     .withUsername("testuser")
                     .withPassword("testpass");
