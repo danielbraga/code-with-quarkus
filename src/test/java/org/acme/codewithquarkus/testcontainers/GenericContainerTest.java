@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GenericContainerTest {
 
-    private static final GenericContainer<?> container = new GenericContainer<>(DockerImageName.parse("nginx:latest"))
-            .withExposedPorts(80);
+    private static final GenericContainer<?> container = new GenericContainer<>(DockerImageName.parse("redhattraining/hello-world-nginx:latest"))
+            .withExposedPorts(8080);
 
     @BeforeAll
     static void startContainer() {
