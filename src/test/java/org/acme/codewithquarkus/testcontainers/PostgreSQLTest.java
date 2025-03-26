@@ -19,7 +19,7 @@ public class PostgreSQLTest {
 
     @Container
     private static final PostgreSQLContainer<?> postgresContainer =
-            new PostgreSQLContainer<>("postgres:15-alpine")
+            new PostgreSQLContainer<>("registry.redhat.io/rhel8/postgresql-15:1-91")
                     .withDatabaseName("testdb")
                     .withUsername("testuser")
                     .withPassword("testpass");
