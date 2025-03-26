@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.utility.DockerImageName;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,7 +20,8 @@ public class PostgreSQLTest {
 
     @Container
     private static final PostgreSQLContainer<?> postgresContainer =
-            new PostgreSQLContainer<>("registry.redhat.io/rhel8/postgresql-15:1-91")
+            new PostgreSQLContainer<>(DockerImageName.parse("registry.redhat.io/rhel8/postgresql-15:1-91")
+                                                     .asCompatibleSubstituteFor("postgresql"))
                     .withDatabaseName("testdb")
                     .withUsername("testuser")
                     .withPassword("testpass");
