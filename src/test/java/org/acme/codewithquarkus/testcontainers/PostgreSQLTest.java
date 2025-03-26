@@ -20,8 +20,7 @@ public class PostgreSQLTest {
 
     @Container
     private static final PostgreSQLContainer<?> postgresContainer =
-            new PostgreSQLContainer<>(DockerImageName.parse("registry.redhat.io/rhel8/postgresql-15:1-91")
-                                                     .asCompatibleSubstituteFor("postgresql"))
+            new PostgreSQLContainer<>(PostgreSQLContainer.IMAGE)
                     .withDatabaseName("testdb")
                     .withUsername("testuser")
                     .withPassword("testpass");
